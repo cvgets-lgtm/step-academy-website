@@ -4,7 +4,7 @@ const nav = document.querySelector('.main-nav');
 const navLinks = [...document.querySelectorAll('.main-nav a')];
 const sections = [...document.querySelectorAll('main section[id], header[id]')];
 
-/* STEP Math Hub — WhatsApp Mathematics Channel — QR ENABLED FINAL */
+/* STEP Math Hub — WhatsApp Mathematics Channel — FINAL COMPACT CENTERED */
 const learningSection = document.querySelector('#learning');
 
 if (learningSection) {
@@ -13,7 +13,7 @@ if (learningSection) {
     .math-channel {
       position: relative;
       overflow: hidden;
-      padding: 82px 0;
+      padding: 78px 0;
       background: #fbfaf7;
     }
 
@@ -25,17 +25,18 @@ if (learningSection) {
       right: -210px;
       top: -250px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(24,158,97,.09), rgba(24,158,97,0) 69%);
+      background: radial-gradient(circle, rgba(24,158,97,.08), rgba(24,158,97,0) 69%);
       pointer-events: none;
     }
 
     .math-channel-card {
       position: relative;
       display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 58px;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 56px;
       align-items: center;
-      padding: 50px 52px;
+      min-height: 610px;
+      padding: 46px 52px;
       overflow: hidden;
       border: 1px solid #dfe5ee;
       border-radius: 24px;
@@ -46,11 +47,11 @@ if (learningSection) {
     .math-channel-card::after {
       content: "∑";
       position: absolute;
-      left: 46%;
+      left: 49%;
       bottom: -90px;
       color: rgba(7,21,47,.024);
       font-family: Georgia, serif;
-      font-size: 270px;
+      font-size: 255px;
       line-height: 1;
       transform: rotate(-8deg);
       pointer-events: none;
@@ -59,13 +60,14 @@ if (learningSection) {
     .math-channel-copy {
       position: relative;
       z-index: 1;
+      align-self: center;
     }
 
     .math-channel-kicker {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 16px;
+      margin-bottom: 17px;
       color: #178655;
       font-size: 9px;
       font-weight: 800;
@@ -98,7 +100,7 @@ if (learningSection) {
 
     .math-channel-copy > p {
       max-width: 650px;
-      margin: 20px 0 0;
+      margin: 22px 0 0;
       color: #657187;
       font-size: 12px;
       line-height: 1.82;
@@ -108,11 +110,12 @@ if (learningSection) {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      max-width: 660px;
       margin-top: 25px;
     }
 
     .math-channel-topics span {
-      padding: 8px 10px;
+      padding: 8px 11px;
       border: 1px solid #e2e7ed;
       border-radius: 999px;
       background: #f7f9fb;
@@ -125,7 +128,7 @@ if (learningSection) {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-top: 27px;
+      margin-top: 32px;
       color: #778397;
       font-size: 9px;
       line-height: 1.55;
@@ -143,7 +146,11 @@ if (learningSection) {
     .math-channel-action {
       position: relative;
       z-index: 2;
-      padding: 28px;
+      width: 100%;
+      max-width: 360px;
+      justify-self: center;
+      align-self: center;
+      padding: 22px;
       border-radius: 20px;
       background: linear-gradient(145deg, #06152f, #0a244c);
       color: #fff;
@@ -153,23 +160,23 @@ if (learningSection) {
     .math-channel-action-head {
       display: flex;
       align-items: center;
-      gap: 13px;
-      margin-bottom: 20px;
+      gap: 12px;
+      margin-bottom: 17px;
     }
 
     .math-channel-icon {
-      width: 43px;
-      height: 43px;
-      flex: 0 0 43px;
+      width: 40px;
+      height: 40px;
+      flex: 0 0 40px;
       display: grid;
       place-items: center;
-      border-radius: 12px;
+      border-radius: 11px;
       background: #189e61;
     }
 
     .math-channel-icon svg {
-      width: 23px;
-      height: 23px;
+      width: 21px;
+      height: 21px;
       fill: none;
       stroke: #fff;
       stroke-width: 2;
@@ -184,25 +191,25 @@ if (learningSection) {
     }
 
     .math-channel-action-head strong {
-      font-size: 12px;
+      font-size: 11.5px;
     }
 
     .math-channel-action-head small {
       color: #93a2ba;
-      font-size: 7.5px;
+      font-size: 7px;
       text-transform: uppercase;
       letter-spacing: .09em;
     }
 
     .math-channel-qr-wrap {
-      padding: 15px;
-      border-radius: 16px;
+      padding: 13px;
+      border-radius: 15px;
       background: #fff;
     }
 
     .math-channel-qr-wrap img {
       width: 100%;
-      max-width: 300px;
+      max-width: 245px;
       aspect-ratio: 1 / 1;
       display: block;
       margin: 0 auto;
@@ -210,22 +217,22 @@ if (learningSection) {
     }
 
     .math-channel-scan {
-      margin-top: 16px;
+      margin-top: 14px;
       text-align: center;
     }
 
     .math-channel-scan strong {
       display: block;
       font-family: "Playfair Display", serif;
-      font-size: 20px;
+      font-size: 18px;
     }
 
     .math-channel-scan span {
       display: block;
-      margin-top: 5px;
+      margin-top: 4px;
       color: #98a7bd;
-      font-size: 8px;
-      line-height: 1.5;
+      font-size: 7.5px;
+      line-height: 1.45;
     }
 
     .math-channel-btn {
@@ -234,12 +241,12 @@ if (learningSection) {
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      margin-top: 18px;
-      padding: 14px 16px;
+      margin-top: 16px;
+      padding: 13px 15px;
       border-radius: 10px;
       background: #189e61;
       color: #fff;
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 800;
       transition: transform .25s ease, background .25s ease;
     }
@@ -262,10 +269,12 @@ if (learningSection) {
       .math-channel-card {
         grid-template-columns: 1fr;
         gap: 34px;
+        min-height: 0;
       }
 
       .math-channel-action {
-        width: min(440px, 100%);
+        width: min(360px, 100%);
+        justify-self: start;
       }
     }
 
@@ -284,15 +293,16 @@ if (learningSection) {
       }
 
       .math-channel-action {
-        padding: 22px;
+        width: 100%;
+        padding: 20px;
       }
 
       .math-channel-qr-wrap {
-        padding: 12px;
+        padding: 11px;
       }
 
       .math-channel-qr-wrap img {
-        max-width: 270px;
+        max-width: 235px;
       }
     }
   `;
