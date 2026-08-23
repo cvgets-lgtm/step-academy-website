@@ -4,62 +4,68 @@ const nav = document.querySelector('.main-nav');
 const navLinks = [...document.querySelectorAll('.main-nav a')];
 const sections = [...document.querySelectorAll('main section[id], header[id]')];
 
-/* Mathematics WhatsApp Channel */
+/* STEP Math Hub — WhatsApp Mathematics Channel — QR ENABLED FINAL */
 const learningSection = document.querySelector('#learning');
+
 if (learningSection) {
   const channelStyles = document.createElement('style');
   channelStyles.textContent = `
     .math-channel {
       position: relative;
       overflow: hidden;
-      padding: 78px 0;
+      padding: 82px 0;
       background: #fbfaf7;
     }
 
     .math-channel::before {
       content: "";
       position: absolute;
-      width: 430px;
-      height: 430px;
-      right: -180px;
-      top: -210px;
+      width: 520px;
+      height: 520px;
+      right: -210px;
+      top: -250px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(24,158,97,.10), rgba(24,158,97,0) 68%);
+      background: radial-gradient(circle, rgba(24,158,97,.09), rgba(24,158,97,0) 69%);
       pointer-events: none;
     }
 
     .math-channel-card {
       position: relative;
       display: grid;
-      grid-template-columns: 1.28fr .72fr;
-      gap: 56px;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 58px;
       align-items: center;
-      padding: 46px 50px;
+      padding: 50px 52px;
       overflow: hidden;
       border: 1px solid #dfe5ee;
       border-radius: 24px;
       background: #fff;
-      box-shadow: 0 22px 58px rgba(7,21,47,.08);
+      box-shadow: 0 24px 60px rgba(7,21,47,.08);
     }
 
     .math-channel-card::after {
       content: "∑";
       position: absolute;
-      right: 38%;
-      bottom: -76px;
-      color: rgba(7,21,47,.025);
+      left: 46%;
+      bottom: -90px;
+      color: rgba(7,21,47,.024);
       font-family: Georgia, serif;
-      font-size: 250px;
+      font-size: 270px;
       line-height: 1;
       transform: rotate(-8deg);
       pointer-events: none;
+    }
+
+    .math-channel-copy {
+      position: relative;
+      z-index: 1;
     }
 
     .math-channel-kicker {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 15px;
+      margin-bottom: 16px;
       color: #178655;
       font-size: 9px;
       font-weight: 800;
@@ -69,20 +75,20 @@ if (learningSection) {
 
     .math-channel-kicker::before {
       content: "";
-      width: 28px;
+      width: 29px;
       height: 2px;
       border-radius: 99px;
       background: #189e61;
     }
 
     .math-channel-copy h2 {
-      max-width: 720px;
+      max-width: 690px;
       margin: 0;
       color: #07152f;
       font-family: "Playfair Display", serif;
-      font-size: clamp(34px, 3.8vw, 52px);
+      font-size: clamp(38px, 4vw, 55px);
       line-height: 1.04;
-      letter-spacing: -.035em;
+      letter-spacing: -.038em;
     }
 
     .math-channel-copy h2 em {
@@ -91,8 +97,8 @@ if (learningSection) {
     }
 
     .math-channel-copy > p {
-      max-width: 690px;
-      margin: 18px 0 0;
+      max-width: 650px;
+      margin: 20px 0 0;
       color: #657187;
       font-size: 12px;
       line-height: 1.82;
@@ -102,7 +108,7 @@ if (learningSection) {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 24px;
+      margin-top: 25px;
     }
 
     .math-channel-topics span {
@@ -115,31 +121,55 @@ if (learningSection) {
       font-weight: 700;
     }
 
+    .math-channel-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 27px;
+      color: #778397;
+      font-size: 9px;
+      line-height: 1.55;
+    }
+
+    .math-channel-note i {
+      width: 7px;
+      height: 7px;
+      flex: 0 0 7px;
+      border-radius: 50%;
+      background: #189e61;
+      box-shadow: 0 0 0 4px rgba(24,158,97,.10);
+    }
+
     .math-channel-action {
       position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      z-index: 2;
       padding: 28px;
-      border-radius: 18px;
-      background: #07152f;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #06152f, #0a244c);
       color: #fff;
+      box-shadow: 0 22px 50px rgba(7,21,47,.18);
+    }
+
+    .math-channel-action-head {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 20px;
     }
 
     .math-channel-icon {
-      width: 48px;
-      height: 48px;
+      width: 43px;
+      height: 43px;
+      flex: 0 0 43px;
       display: grid;
       place-items: center;
-      margin-bottom: 20px;
-      border-radius: 14px;
+      border-radius: 12px;
       background: #189e61;
     }
 
     .math-channel-icon svg {
-      width: 25px;
-      height: 25px;
+      width: 23px;
+      height: 23px;
       fill: none;
       stroke: #fff;
       stroke-width: 2;
@@ -147,17 +177,55 @@ if (learningSection) {
       stroke-linejoin: round;
     }
 
-    .math-channel-action strong {
-      font-family: "Playfair Display", serif;
-      font-size: 23px;
-      line-height: 1.12;
+    .math-channel-action-head div {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
     }
 
-    .math-channel-action small {
-      margin-top: 9px;
-      color: #9daac0;
-      font-size: 9px;
-      line-height: 1.6;
+    .math-channel-action-head strong {
+      font-size: 12px;
+    }
+
+    .math-channel-action-head small {
+      color: #93a2ba;
+      font-size: 7.5px;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+    }
+
+    .math-channel-qr-wrap {
+      padding: 15px;
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .math-channel-qr-wrap img {
+      width: 100%;
+      max-width: 300px;
+      aspect-ratio: 1 / 1;
+      display: block;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+    .math-channel-scan {
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    .math-channel-scan strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+    }
+
+    .math-channel-scan span {
+      display: block;
+      margin-top: 5px;
+      color: #98a7bd;
+      font-size: 8px;
+      line-height: 1.5;
     }
 
     .math-channel-btn {
@@ -166,7 +234,7 @@ if (learningSection) {
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      margin-top: 22px;
+      margin-top: 18px;
       padding: 14px 16px;
       border-radius: 10px;
       background: #189e61;
@@ -193,11 +261,11 @@ if (learningSection) {
     @media (max-width: 900px) {
       .math-channel-card {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 34px;
       }
 
       .math-channel-action {
-        max-width: 520px;
+        width: min(440px, 100%);
       }
     }
 
@@ -216,7 +284,15 @@ if (learningSection) {
       }
 
       .math-channel-action {
-        padding: 24px 20px;
+        padding: 22px;
+      }
+
+      .math-channel-qr-wrap {
+        padding: 12px;
+      }
+
+      .math-channel-qr-wrap img {
+        max-width: 270px;
       }
     }
   `;
@@ -225,38 +301,67 @@ if (learningSection) {
   const channelSection = document.createElement('section');
   channelSection.className = 'math-channel';
   channelSection.id = 'math-channel';
-  channelSection.setAttribute('aria-label', 'Mathematics WhatsApp Channel');
+  channelSection.setAttribute('aria-label', 'STEP Math Hub WhatsApp Mathematics Channel');
+
   channelSection.innerHTML = `
     <div class="container">
       <div class="math-channel-card reveal">
         <div class="math-channel-copy">
-          <span class="math-channel-kicker">Mathematics Learning Channel</span>
+          <span class="math-channel-kicker">STEP Math Hub • WhatsApp Channel</span>
           <h2>Learn Mathematics <em>Beyond the Classroom.</em></h2>
           <p>
-            Follow our WhatsApp Mathematics Channel for conceptual explanations, solved questions,
-            visual learning resources, practice activities and lecture follow-ups for Matric, FSc and ICS students.
+            Follow STEP Math Hub for conceptual explanations, solved questions, visual learning resources,
+            practice activities and lecture follow-ups — created to help Matric, FSc and ICS students
+            understand mathematics more deeply.
           </p>
-          <div class="math-channel-topics" aria-label="Channel resources">
+
+          <div class="math-channel-topics" aria-label="Mathematics channel resources">
             <span>Concept Explanations</span>
             <span>Solved Questions</span>
             <span>Visual Mathematics</span>
             <span>Practice MCQs</span>
+            <span>Graphs & Animations</span>
             <span>Lecture Follow-ups</span>
+          </div>
+
+          <div class="math-channel-note">
+            <i></i>
+            <span>Open the channel on your phone, or scan the QR code from another device.</span>
           </div>
         </div>
 
         <div class="math-channel-action">
-          <div class="math-channel-icon" aria-hidden="true">
-            <svg viewBox="0 0 32 32">
-              <path d="M7 24.5 8.4 20A10.5 10.5 0 1 1 12 24l-5 1.5Z"/>
-              <path d="M12 12.2c.7 3.7 3.4 6.4 7.1 7.1"/>
-              <path d="M12.1 12.2c.2-.5.5-.8.9-.9M19.2 19.3c-.4.4-.8.7-1.2.8"/>
-            </svg>
+          <div class="math-channel-action-head">
+            <div class="math-channel-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32">
+                <path d="M7 24.5 8.4 20A10.5 10.5 0 1 1 12 24l-5 1.5Z"/>
+                <path d="M12 12.2c.7 3.7 3.4 6.4 7.1 7.1"/>
+                <path d="M12.1 12.2c.2-.5.5-.8.9-.9M19.2 19.3c-.4.4-.8.7-1.2.8"/>
+              </svg>
+            </div>
+            <div>
+              <strong>STEP Math Hub</strong>
+              <small>Thokar Niaz Baig • Mathematics</small>
+            </div>
           </div>
-          <strong>Mathematics on WhatsApp</strong>
-          <small>Focused academic resources delivered directly through our Mathematics Channel.</small>
-          <a class="math-channel-btn" href="https://whatsapp.com/channel/0029VbDPNNMDzgT78LeRyf2L" target="_blank" rel="noopener noreferrer" aria-label="Follow STEP Academy Mathematics WhatsApp Channel">
-            <span>Follow the Channel</span><span aria-hidden="true">↗</span>
+
+          <div class="math-channel-qr-wrap">
+            <img src="assets/images/math-hub-whatsapp-qr.png"
+                 alt="QR code to follow STEP Math Hub WhatsApp Channel">
+          </div>
+
+          <div class="math-channel-scan">
+            <strong>Scan to Follow</strong>
+            <span>Point your phone camera at the QR code</span>
+          </div>
+
+          <a class="math-channel-btn"
+             href="https://whatsapp.com/channel/0029VbDPNNMDzgT78LeRyf2L"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Follow STEP Math Hub WhatsApp Channel">
+            <span>Follow on WhatsApp</span>
+            <span aria-hidden="true">↗</span>
           </a>
         </div>
       </div>
@@ -267,13 +372,14 @@ if (learningSection) {
 
   const connectColumn = [...document.querySelectorAll('.footer-col')]
     .find(col => col.querySelector('strong')?.textContent.trim() === 'Connect');
+
   if (connectColumn) {
     const channelLink = document.createElement('a');
     channelLink.className = 'footer-channel-link';
     channelLink.href = 'https://whatsapp.com/channel/0029VbDPNNMDzgT78LeRyf2L';
     channelLink.target = '_blank';
     channelLink.rel = 'noopener noreferrer';
-    channelLink.textContent = 'Mathematics WhatsApp Channel ↗';
+    channelLink.textContent = 'STEP Math Hub WhatsApp Channel ↗';
     connectColumn.appendChild(channelLink);
   }
 }
