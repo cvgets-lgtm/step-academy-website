@@ -584,7 +584,14 @@ if (whyStepSection) {
         gap: 34px;
       }
 
+      /* Mobile/tablet: show the leadership text first, then the portrait.
+         Desktop order remains unchanged. */
+      .leadership-copy {
+        order: 1;
+      }
+
       .leadership-photo {
+        order: 2;
         min-height: 390px;
         max-width: 520px;
       }
