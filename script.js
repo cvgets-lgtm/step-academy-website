@@ -394,6 +394,298 @@ if (learningSection) {
   }
 }
 
+/* Leadership & Academic Direction */
+const whyStepSection = document.querySelector('#about');
+
+if (whyStepSection) {
+  const leadershipStyles = document.createElement('style');
+  leadershipStyles.textContent = `
+    .leadership-section {
+      position: relative;
+      padding: 92px 0;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .leadership-section::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      left: -310px;
+      top: -230px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(14,53,111,.07), rgba(14,53,111,0) 70%);
+      pointer-events: none;
+    }
+
+    .leadership-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: .72fr 1.28fr;
+      gap: 58px;
+      align-items: center;
+      padding: 42px;
+      border: 1px solid #dfe5ee;
+      border-radius: 24px;
+      background: #fbfaf7;
+      box-shadow: 0 22px 54px rgba(7,21,47,.07);
+    }
+
+    .leadership-photo {
+      position: relative;
+      min-height: 440px;
+      overflow: hidden;
+      border-radius: 19px;
+      background: linear-gradient(145deg, #07152f, #0e356f);
+      box-shadow: 0 22px 46px rgba(7,21,47,.16);
+    }
+
+    .leadership-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 440px;
+      display: block;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .leadership-placeholder {
+      position: absolute;
+      inset: 0;
+      display: none;
+      place-items: center;
+      align-content: center;
+      gap: 12px;
+      text-align: center;
+      color: #fff;
+      background:
+        radial-gradient(circle at 70% 22%, rgba(255,255,255,.08), transparent 30%),
+        linear-gradient(145deg, #07152f, #0e356f);
+    }
+
+    .leadership-placeholder strong {
+      display: grid;
+      place-items: center;
+      width: 112px;
+      height: 112px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 50%;
+      font-family: "Playfair Display", serif;
+      font-size: 40px;
+      background: rgba(255,255,255,.07);
+    }
+
+    .leadership-placeholder span {
+      color: #b8c5d9;
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .leadership-copy {
+      position: relative;
+      z-index: 1;
+    }
+
+    .leadership-kicker {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      color: #db243a;
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+    }
+
+    .leadership-kicker::before {
+      content: "";
+      width: 29px;
+      height: 2px;
+      border-radius: 99px;
+      background: #db243a;
+    }
+
+    .leadership-copy h2 {
+      margin: 0;
+      color: #07152f;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 4vw, 55px);
+      line-height: 1.04;
+      letter-spacing: -.038em;
+    }
+
+    .leadership-name {
+      margin-top: 21px;
+      color: #07152f;
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    .leadership-role {
+      margin-top: 7px;
+      color: #db243a;
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .11em;
+    }
+
+    .leadership-copy > p {
+      max-width: 720px;
+      margin: 21px 0 0;
+      color: #657187;
+      font-size: 12px;
+      line-height: 1.85;
+    }
+
+    .leadership-philosophy {
+      margin-top: 18px !important;
+      color: #394761 !important;
+    }
+
+    .leadership-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 29px;
+    }
+
+    .leadership-stat {
+      min-height: 98px;
+      padding: 16px;
+      border: 1px solid #e0e5ed;
+      border-radius: 13px;
+      background: #fff;
+    }
+
+    .leadership-stat strong {
+      display: block;
+      color: #07152f;
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+      line-height: 1.08;
+    }
+
+    .leadership-stat span {
+      display: block;
+      margin-top: 7px;
+      color: #778397;
+      font-size: 8px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      .leadership-card {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .leadership-photo {
+        min-height: 390px;
+        max-width: 520px;
+      }
+
+      .leadership-photo img {
+        min-height: 390px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .leadership-section {
+        padding: 66px 0;
+      }
+
+      .leadership-card {
+        padding: 22px;
+        border-radius: 18px;
+      }
+
+      .leadership-photo,
+      .leadership-photo img {
+        min-height: 340px;
+      }
+
+      .leadership-copy h2 {
+        font-size: 36px;
+      }
+
+      .leadership-name {
+        font-size: 23px;
+      }
+
+      .leadership-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .leadership-stat {
+        min-height: 0;
+      }
+    }
+  `;
+  document.head.appendChild(leadershipStyles);
+
+  const leadershipSection = document.createElement('section');
+  leadershipSection.className = 'leadership-section';
+  leadershipSection.id = 'leadership';
+  leadershipSection.setAttribute('aria-label', 'Leadership and Academic Direction');
+
+  leadershipSection.innerHTML = `
+    <div class="container">
+      <div class="leadership-card reveal">
+        <div class="leadership-photo">
+          <img src="assets/images/dr-shahid-bashir.jpg"
+               alt="Prof. Dr. Shahid Bashir"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+          <div class="leadership-placeholder" aria-label="Prof. Dr. Shahid Bashir portrait placeholder">
+            <strong>SB</strong>
+            <span>Prof. Dr. Shahid Bashir</span>
+          </div>
+        </div>
+
+        <div class="leadership-copy">
+          <span class="leadership-kicker">Leadership & Academic Direction</span>
+          <h2>Academic leadership shaped by experience.</h2>
+
+          <div class="leadership-name">Prof. Dr. Shahid Bashir</div>
+          <div class="leadership-role">PhD Mathematics • Educationist • Franchise Owner</div>
+
+          <p>
+            With over two decades of association with Punjab Colleges, Prof. Dr. Shahid Bashir brings
+            extensive experience in teaching, academic leadership and student development. His academic
+            associations have also included FAST–NUCES and the University of Central Punjab (UCP).
+          </p>
+
+          <p class="leadership-philosophy">
+            At STEP Academy Thokar Niaz Baig, the academic direction remains focused on concept-based learning,
+            disciplined classroom culture, meaningful testing and consistent student development.
+          </p>
+
+          <div class="leadership-stats" aria-label="Academic experience">
+            <div class="leadership-stat">
+              <strong>20+ Years</strong>
+              <span>Association with Punjab Colleges</span>
+            </div>
+            <div class="leadership-stat">
+              <strong>FAST–NUCES</strong>
+              <span>Academic association</span>
+            </div>
+            <div class="leadership-stat">
+              <strong>UCP</strong>
+              <span>University of Central Punjab</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  whyStepSection.parentNode.insertBefore(leadershipSection, whyStepSection);
+}
+
 if (menuButton && nav) {
   menuButton.addEventListener('click', () => {
     const open = nav.classList.toggle('open');
