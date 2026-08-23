@@ -447,7 +447,9 @@ if (whyStepSection) {
       min-height: 440px;
       display: block;
       object-fit: cover;
-      object-position: center top;
+      object-position: 50% 18%;
+      transform: scale(1.42);
+      transform-origin: 42% 22%;
     }
 
     .leadership-placeholder {
@@ -598,6 +600,9 @@ if (whyStepSection) {
 
       .leadership-photo img {
         min-height: 390px;
+        object-position: 50% 16%;
+        transform: scale(1.36);
+        transform-origin: 42% 20%;
       }
     }
 
@@ -614,6 +619,12 @@ if (whyStepSection) {
       .leadership-photo,
       .leadership-photo img {
         min-height: 340px;
+      }
+
+      .leadership-photo img {
+        object-position: 50% 14%;
+        transform: scale(1.32);
+        transform-origin: 42% 18%;
       }
 
       .leadership-copy h2 {
