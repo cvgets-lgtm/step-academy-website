@@ -2,7 +2,16 @@ const header = document.querySelector('.site-header');
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
 const navLinks = [...document.querySelectorAll('.main-nav a')];
+const homeNavLink = document.querySelector('.main-nav a[href="#home"]');
 const sections = [...document.querySelectorAll('main section[id], header[id]')];
+
+if (homeNavLink) {
+  homeNavLink.addEventListener('click', event => {
+    event.preventDefault();
+    window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
 /* STEP Math Hub — WhatsApp Mathematics Channel — FINAL COMPACT CENTERED */
 const learningSection = document.querySelector('#learning');
