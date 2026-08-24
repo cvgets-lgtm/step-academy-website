@@ -742,3 +742,69 @@ sections.forEach(section => sectionObserver.observe(section));
 
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
+
+/* Session-scoped admissions announcement */
+const admissionsPopup = document.getElementById('admissions-popup');
+
+if (admissionsPopup) {
+  const popupDialog = admissionsPopup.querySelector('[role="dialog"]');
+  const closeTriggers = [...admissionsPopup.querySelectorAll('[data-popup-close]')];
+  const popupActions = [...admissionsPopup.querySelectorAll('.admissions-popup__actions a')];
+  const popupSessionKey = 'stepAdmissionsAnnouncementClosed';
+  let previouslyFocused = null;
+  let closeTimer = null;
+
+  const getFocusableElements = () => [...popupDialog.querySelectorAll('a[href], button:not([disabled])')];
+
+  const closeAdmissionsPopup = () => {
+    if (admissionsPopup.hidden) return;
+    window.sessionStorage.setItem(popupSessionKey, 'true');
+    admissionsPopup.classList.remove('is-visible');
+    closeTimer = window.setTimeout(() => {
+      admissionsPopup.hidden = true;
+      document.body.style.overflow = '';
+      previouslyFocused?.focus();
+    }, 300);
+  };
+
+  const openAdmissionsPopup = () => {
+    if (window.sessionStorage.getItem(popupSessionKey) === 'true') return;
+    previouslyFocused = document.activeElement;
+    admissionsPopup.hidden = false;
+    document.body.style.overflow = 'hidden';
+    window.requestAnimationFrame(() => {
+      admissionsPopup.classList.add('is-visible');
+      admissionsPopup.querySelector('.admissions-popup__close')?.focus();
+    });
+  };
+
+  closeTriggers.forEach(trigger => trigger.addEventListener('click', closeAdmissionsPopup));
+  popupActions.forEach(action => action.addEventListener('click', closeAdmissionsPopup));
+
+  admissionsPopup.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closeAdmissionsPopup();
+      return;
+    }
+
+    if (event.key !== 'Tab') return;
+    const focusable = getFocusableElements();
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
+  if (window.sessionStorage.getItem(popupSessionKey) !== 'true') {
+    window.setTimeout(openAdmissionsPopup, 2000);
+  }
+
+  window.addEventListener('pagehide', () => window.clearTimeout(closeTimer));
+}

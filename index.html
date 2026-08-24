@@ -643,6 +643,39 @@
     </div>
   </footer>
 
+  <div class="admissions-popup" id="admissions-popup" hidden>
+    <div class="admissions-popup__backdrop" data-popup-close></div>
+    <section class="admissions-popup__dialog"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="admissions-popup-title"
+             aria-describedby="admissions-popup-description">
+      <button class="admissions-popup__close"
+              type="button"
+              data-popup-close
+              aria-label="Close admissions announcement">×</button>
+
+      <div class="admissions-popup__accent" aria-hidden="true"></div>
+      <p class="admissions-popup__eyebrow">Admissions Announcement</p>
+      <h2 id="admissions-popup-title">September Admissions Open</h2>
+      <p class="admissions-popup__programs">Classes 9 &amp; 10 <span aria-hidden="true">•</span> FSc &amp; ICS</p>
+      <p class="admissions-popup__description" id="admissions-popup-description">
+        Join STEP Academy Thokar Niaz Baig Campus for concept-based learning, experienced faculty,
+        regular testing, and a disciplined academic environment.
+      </p>
+
+      <div class="admissions-popup__availability">
+        <span aria-hidden="true"></span>
+        Limited Seats Available
+      </div>
+
+      <div class="admissions-popup__actions">
+        <a class="admissions-popup__primary" href="#programs">View Programs <span aria-hidden="true">→</span></a>
+        <a class="admissions-popup__secondary" href="#contact">Contact Us <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
