@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Understand vertical and horizontal stretching and compression through an interactive graphical lesson by STEP Academy Thokar Niaz Baig Campus.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#07152f">
+  <link rel="canonical" href="https://stepacademythokar.pk/learning/scaling-of-graphs">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Scaling of Graphs — Interactive Mathematics Lesson | STEP Academy Thokar">
+  <meta property="og:description" content="Understand vertical and horizontal stretching and compression through an interactive graphical lesson by STEP Academy Thokar Niaz Baig Campus.">
+  <meta property="og:url" content="https://stepacademythokar.pk/learning/scaling-of-graphs">
+  <meta property="og:site_name" content="STEP Academy Thokar Niaz Baig">
+  <title>Scaling of Graphs — Interactive Mathematics Lesson | STEP Academy Thokar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="lesson.css">
+</head>
+<body>
+  <a class="skip-link" href="#lesson">Skip to lesson</a>
+  <header class="resource-site-header">
+    <div class="resource-nav">
+      <a class="resource-brand" href="../../index.html" aria-label="STEP Academy Thokar Niaz Baig home">
+        <img src="/assets/images/STEP-PGC-LOGO.png" alt="STEP Academy Thokar Niaz Baig Campus — A Project of Punjab Colleges">
+      </a>
+      <nav aria-label="Resource navigation">
+        <a href="../../index.html#learning">Learning Hub</a>
+        <a href="../../index.html#programs">Programs</a>
+      </nav>
+    </div>
+  </header>
+  <div class="resource-breadcrumb"><a href="../../index.html#learning">← Back to Learning Hub</a></div>
+  <main class="lesson-shell" id="lesson">
+    <header class="lesson-header">
+      <div class="title-row">
+        <div>
+          <p class="eyebrow">FSc / ICS Part-II Mathematics</p>
+          <h1>SCALING OF GRAPHS</h1>
+          <p class="subtitle">Stretching and Compression</p>
+        </div>
+        <div class="step-badge" aria-live="polite"><span id="stepNumber">1</span><small>of 8</small></div>
+      </div>
+    </header>
+
+    <div class="progress" aria-label="Lesson progress"><div id="progressFill"></div></div>
+
+    <section class="board" aria-live="polite">
+      <div class="explanation">
+        <p class="step-kicker" id="stepKicker">Step 1</p>
+        <h2 id="stepTitle"></h2>
+        <div id="stepText"></div>
+        <div class="equations" id="equations"></div>
+        <div class="conclusion" id="conclusion"></div>
+      </div>
+
+      <div class="graph-card">
+        <div class="graph-key" aria-label="Graph legend">
+          <span><i class="key-line original"></i>Original <b>y = x²</b></span>
+          <span id="transformedKey"><i class="key-line transformed"></i>Transformed <b id="transformedLabel"></b></span>
+        </div>
+        <svg id="graph" viewBox="0 0 640 520" role="img" aria-labelledby="graphTitle graphDesc">
+          <title id="graphTitle">Coordinate graph illustrating scaling</title>
+          <desc id="graphDesc">The original parabola y equals x squared and its transformation, with corresponding points and guides.</desc>
+          <defs>
+            <pattern id="smallGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#dbe5ef" stroke-width="1"/>
+            </pattern>
+            <marker id="axisArrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse">
+              <path d="M0,0 L8,4 L0,8 Z" fill="#25364d"/>
+            </marker>
+            <marker id="moveArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+              <path d="M0,0 L8,4 L0,8 Z" fill="#d54b45"/>
+            </marker>
+          </defs>
+          <rect class="plot-bg" x="40" y="20" width="560" height="460" rx="8"/>
+          <g id="axes"></g>
+          <g id="guides"></g>
+          <path id="originalCurve" class="curve original-curve"/>
+          <path id="transformedCurve" class="curve transformed-curve"/>
+          <g id="trails"></g>
+          <g id="points"></g>
+          <g id="labels"></g>
+        </svg>
+        <p class="graph-hint" id="graphHint"></p>
+      </div>
+    </section>
+
+    <div class="playback-settings">
+      <label for="speedSelect">Animation speed</label>
+      <select id="speedSelect" aria-describedby="speedHelp">
+        <option value="slow" selected>Slow — recommended for teaching</option>
+        <option value="normal">Normal</option>
+        <option value="fast">Fast</option>
+      </select>
+      <span id="speedHelp">Changes the pacing of movement and drawing.</span>
+    </div>
+    <nav class="controls" aria-label="Lesson controls">
+      <button id="previousBtn" type="button">← Previous</button>
+      <button id="replayBtn" type="button">↻ Replay</button>
+      <button id="autoBtn" type="button" aria-pressed="false">▶ Auto Play</button>
+      <button id="nextBtn" class="primary" type="button">Next →</button>
+    </nav>
+    <p class="keyboard-tip">Tip: use the left and right arrow keys to move between steps.</p>
+  </main>
+  <section class="continue-learning" aria-labelledby="continueTitle">
+    <p class="step-kicker">Keep building strong concepts</p>
+    <h2 id="continueTitle">Continue Learning with STEP Academy</h2>
+    <p>Explore more concept-based mathematics resources and academic programs.</p>
+    <div class="continue-actions">
+      <a href="../../index.html#learning">Explore Learning Resources</a>
+      <a class="secondary" href="../../index.html#programs">View Our Programs</a>
+    </div>
+  </section>
+  <footer class="resource-footer">© STEP Academy Thokar Niaz Baig Campus</footer>
+  <script src="lesson.js"></script>
+</body>
+</html>
