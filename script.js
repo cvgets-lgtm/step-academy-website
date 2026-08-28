@@ -817,3 +817,22 @@ if (admissionsPopup) {
 
   window.addEventListener('pagehide', () => window.clearTimeout(closeTimer));
 }
+const achievementSection = document.querySelector('.proud-achievement');
+
+if (achievementSection) {
+  const achievementObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          achievementSection.classList.add('achievement-visible');
+          observer.unobserve(achievementSection);
+        }
+      });
+    },
+    {
+      threshold: 0.3
+    }
+  );
+
+  achievementObserver.observe(achievementSection);
+}
