@@ -328,6 +328,87 @@ button, input { font: inherit; }
   pointer-events: none;
 }
 .student-frame img { width: 100%; height: 100%; min-height: 565px; object-fit: cover; object-position: 52% center; display: block; }
+
+.step-orbit-emblem {
+  position: absolute; top: clamp(12px, 5%, 82px); right: clamp(18px, 1.8vw, 24px); z-index: 4;
+  width: clamp(118px, 10.8vw, 200px); height: clamp(118px, 10.8vw, 200px); display: grid; place-items: center;
+  pointer-events: none; opacity: 1;
+  filter: drop-shadow(0 0 18px rgba(84, 162, 255, .22));
+  animation: emblem-breathe 4.8s ease-in-out infinite;
+}
+
+.step-orbit-disc {
+  position: absolute; inset: 12px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 28%, rgba(35, 72, 128, .95), rgba(8, 22, 45, .98) 54%, rgba(4, 14, 29, 1) 100%);
+  border: 1px solid rgba(159, 188, 255, .18);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.04), 0 0 28px rgba(73, 154, 255, .18);
+}
+
+.step-orbit-ring {
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 1px solid rgba(120, 201, 255, .38);
+  box-shadow: 0 0 18px rgba(82, 170, 255, .16);
+}
+
+.step-orbit-ring--outer {
+  inset: 4px;
+  border-color: rgba(110, 180, 255, .28);
+  animation: ring-rotate-slow 20s linear infinite;
+}
+
+.step-orbit-ring--blue {
+  inset: 14px;
+  border-color: rgba(98, 196, 255, .52);
+  animation: ring-rotate-medium 15s linear infinite reverse;
+}
+
+.step-orbit-ring--gold {
+  inset: 24px;
+  border-color: rgba(246, 189, 91, .72);
+  animation: ring-rotate-fast 10s linear infinite;
+}
+
+.step-orbit-gold-arc {
+  position: absolute; inset: 10px; border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: rgba(246, 189, 91, .9);
+  border-right-color: rgba(246, 189, 91, .78);
+  transform: rotate(18deg);
+  box-shadow: 0 0 14px rgba(246, 189, 91, .26);
+  animation: gold-arc 16s linear infinite;
+}
+
+.step-orbit-dot {
+  position: absolute; top: 50%; left: 50%; width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #effdff 0%, #9ce0ff 30%, rgba(95, 171, 255, .95) 100%);
+  box-shadow: 0 0 12px rgba(125, 196, 255, .95);
+}
+
+.step-orbit-dot--1 { animation: orbit-dot-1 12s linear infinite; }
+.step-orbit-dot--2 { animation: orbit-dot-2 16s linear infinite; }
+.step-orbit-dot--3 { animation: orbit-dot-3 18s linear infinite; }
+
+.step-orbit-logo {
+  position: absolute;
+  inset: clamp(22px, 2.2vw, 32px);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(18, 42, 82, .65) 0%,
+    rgba(9, 23, 45, .08) 58%,
+    transparent 76%
+  );
+}
+
+.step-orbit-logo img {
+  display: block; width: 68%; max-width: 126px; height: auto;
+  filter: drop-shadow(0 0 12px rgba(126, 186, 255, .26));
+}
+
 .student-caption {
   position: absolute; left: 24px; bottom: 22px; z-index: 2;
   padding: 12px 15px; border-radius: 12px; background: rgba(5,17,38,.72);
@@ -737,7 +818,6 @@ button, input { font: inherit; }
   }
 }
 
-
 /* --- V4.1: hero image alignment correction --- */
 /* Keep the existing image; remove the artificial tall frame and align it higher. */
 .student-hero-merged {
@@ -765,7 +845,17 @@ button, input { font: inherit; }
   object-position: center center;
 }
 
-@media (max-width: 1180px) {
+@media (min-width: 1200px) {
+  .step-orbit-emblem {
+    width: clamp(170px, 10.2vw, 198px);
+    height: clamp(170px, 10.2vw, 198px);
+    top: clamp(18px, 4.2%, 74px);
+    right: clamp(18px, 1.8vw, 24px);
+  }
+  .step-orbit-logo { inset: clamp(30px, 2.8vw, 42px); }
+}
+
+@media (max-width: 1199px) and (min-width: 900px) {
   .student-hero-merged {
     min-height: 0;
     transform: translateY(-26px);
@@ -773,9 +863,17 @@ button, input { font: inherit; }
   .student-hero-merged .student-frame {
     min-height: 0;
   }
+  .step-orbit-emblem {
+    width: clamp(132px, 13.5vw, 174px);
+    height: clamp(132px, 13.5vw, 174px);
+    top: clamp(16px, 5%, 62px);
+    right: clamp(18px, 1.8vw, 20px);
+  }
+  .step-orbit-logo { inset: clamp(24px, 3vw, 30px); }
+  .step-orbit-logo img { width: 58%; }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 899px) and (min-width: 600px) {
   .student-hero-merged {
     min-height: 0;
     transform: none;
@@ -784,14 +882,103 @@ button, input { font: inherit; }
     min-height: 0;
     aspect-ratio: 1220 / 935;
   }
+  .step-orbit-emblem {
+    width: clamp(108px, 17vw, 146px);
+    height: clamp(108px, 17vw, 146px);
+    top: clamp(14px, 4%, 42px);
+    right: clamp(18px, 1.8vw, 20px);
+  }
+  .step-orbit-logo { inset: clamp(20px, 4vw, 26px); }
+  .step-orbit-logo img { width: 68%; }
+  .step-orbit-dot { width: 7px; height: 7px; }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 599px) {
   .student-hero-merged {
     min-height: 0;
   }
   .student-hero-merged .student-frame {
     min-height: 0;
+  }
+  .step-orbit-emblem {
+    width: clamp(74px, 18vw, 90px);
+    height: clamp(74px, 18vw, 90px);
+    top: clamp(10px, 2.5%, 22px);
+    right: clamp(16px, 1.8vw, 18px);
+  }
+  .step-orbit-logo { inset: clamp(12px, 3.6vw, 16px); }
+  .step-orbit-logo img { width: 58%; }
+  .step-orbit-dot { width: 6px; height: 6px; }
+}
+
+@media (max-width: 430px) {
+  .step-orbit-emblem {
+    width: 96px;
+    height: 96px;
+    top: 12px;
+    right: 18px;
+  }
+}
+
+@media (max-width: 390px) {
+  .step-orbit-emblem {
+    width: 90px;
+    height: 90px;
+    top: 10px;
+    right: 18px;
+  }
+}
+
+@keyframes ring-rotate-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes ring-rotate-medium {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+@keyframes ring-rotate-fast {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes gold-arc {
+  0% { transform: rotate(18deg) scale(1); }
+  50% { transform: rotate(198deg) scale(1.02); }
+  100% { transform: rotate(378deg) scale(1); }
+}
+
+@keyframes orbit-dot-1 {
+  0% { transform: rotate(0deg) translateX(74px) rotate(0deg); opacity: .7; }
+  50% { opacity: 1; }
+  100% { transform: rotate(360deg) translateX(74px) rotate(-360deg); opacity: .7; }
+}
+
+@keyframes orbit-dot-2 {
+  0% { transform: rotate(80deg) translateX(69px) rotate(-80deg); opacity: .5; }
+  50% { opacity: 1; }
+  100% { transform: rotate(440deg) translateX(69px) rotate(-440deg); opacity: .5; }
+}
+
+@keyframes orbit-dot-3 {
+  0% { transform: rotate(160deg) translateX(80px) rotate(-160deg); opacity: .6; }
+  50% { opacity: 1; }
+  100% { transform: rotate(520deg) translateX(80px) rotate(-520deg); opacity: .6; }
+}
+
+@keyframes emblem-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step-orbit-emblem,
+  .step-orbit-ring,
+  .step-orbit-gold-arc,
+  .step-orbit-dot {
+    animation: none !important;
   }
 }
 
@@ -1928,31 +2115,10 @@ button, input { font: inherit; }
   transition-delay: 0.44s;
 }
 
-/* Refine the main achievement heading */
-
-.achievement-copy h3 {
-  margin: 0 0 20px;
-  max-width: 650px;
-  font-family: "Manrope", sans-serif;
-  font-size: clamp(1.45rem, 1.8vw, 1.9rem);
-  font-weight: 700;
-  line-height: 1.22;
-  letter-spacing: -0.025em;
-}
-
-.achievement-copy h3 span {
-  color: #123f8c;
-  font-weight: 800;
-}
-
 @media (max-width: 768px) {
   .achievement-kinetic-title {
     font-size: clamp(2.35rem, 11vw, 3.7rem);
     line-height: 1.02;
-  }
-
-  .achievement-copy h3 {
-    font-size: 1.65rem;
   }
 }
 
@@ -1977,7 +2143,27 @@ button, input { font: inherit; }
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
   gap: 34px;
   align-items: center;
-  margin-top: 28px;
+  margin-top: 30px;
+}
+
+.achievement-statement {
+  max-width: 900px;
+  margin: 42px auto 0;
+  text-align: center;
+}
+
+.achievement-statement h3 {
+  margin: 0;
+  color: #07152f;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+}
+
+.achievement-statement h3 span {
+  color: #123f8c;
 }
 
 .achievement-copy {
@@ -1999,18 +2185,6 @@ button, input { font: inherit; }
   font-size: 0.9rem;
   font-weight: 800;
   letter-spacing: 0.02em;
-}
-
-.achievement-copy h3 {
-  margin: 0 0 18px;
-  color: #07152f;
-  font-size: clamp(1.9rem, 2.8vw, 2.8rem);
-  line-height: 1.14;
-  letter-spacing: -0.02em;
-}
-
-.achievement-copy h3 span {
-  color: #123f8c;
 }
 
 .achievement-copy > p {
@@ -2076,8 +2250,10 @@ button, input { font: inherit; }
   display: block;
   width: 100%;
   max-width: 520px;
+  aspect-ratio: 4 / 3;
   height: auto;
-  transform: translateY(8px);
+  object-fit: cover;
+  object-position: center;
   border-radius: 26px;
   border: 1px solid rgba(7, 21, 47, 0.08);
   box-shadow: 0 26px 65px rgba(7, 21, 47, 0.18);
@@ -2091,7 +2267,6 @@ button, input { font: inherit; }
 
   .achievement-photo img {
     max-width: 560px;
-    transform: none;
   }
 
   .achievement-highlights {
@@ -2101,13 +2276,18 @@ button, input { font: inherit; }
 
 /* Mobile */
 @media (max-width: 768px) {
+  .achievement-statement {
+    margin-top: 32px;
+    text-align: left;
+  }
+
+  .achievement-statement h3 {
+    font-size: 1.85rem;
+  }
+
   .achievement-copy {
     padding: 24px;
     border-radius: 20px;
-  }
-
-  .achievement-copy h3 {
-    font-size: 1.9rem;
   }
 
   .achievement-highlights {
