@@ -2346,3 +2346,514 @@ button, input { font: inherit; }
     gap: 8px;
   }
 }
+/* =========================================================
+   RESULT 2026 — RIDA UMAR
+   Approved homepage result highlight
+   ========================================================= */
+
+.result-spotlight {
+  position: relative;
+  padding: 34px 0;
+  overflow: hidden;
+  background: #eef2f7;
+  border-bottom: 1px solid rgba(7, 21, 47, .08);
+}
+
+.result-spotlight::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -140px;
+  top: -220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 163, 67, .18), transparent 68%);
+  pointer-events: none;
+}
+
+.result-spotlight-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(260px, .58fr);
+  grid-template-areas:
+    "copy photo"
+    "detail photo";
+  column-gap: 42px;
+  row-gap: 20px;
+  align-items: center;
+  min-height: 360px;
+  padding: 42px 48px;
+  overflow: hidden;
+  border: 1px solid rgba(7, 21, 47, .09);
+  border-radius: 28px;
+  background:
+    linear-gradient(105deg, #ffffff 0%, #fbfcfe 58%, #f4f7fb 100%);
+  box-shadow: 0 24px 58px rgba(7, 21, 47, .10);
+}
+
+.result-spotlight-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(180deg, #07152f, #123f8c 62%, #d2a63b);
+}
+
+.result-spotlight-copy {
+  grid-area: copy;
+  position: relative;
+  z-index: 1;
+}
+
+.result-spotlight-label {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 14px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  color: #8b6818;
+  background: rgba(201, 163, 67, .13);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.result-spotlight h2 {
+  margin: 0;
+  color: var(--navy);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(43px, 5vw, 68px);
+  line-height: .96;
+  letter-spacing: -.045em;
+}
+
+.result-spotlight-score {
+  margin: 13px 0 0;
+  color: #33445c;
+  font-size: clamp(18px, 2vw, 25px);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.result-spotlight-score strong {
+  color: #b88412;
+  font-size: 1.12em;
+  font-weight: 800;
+}
+
+.result-spotlight-student {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 24px;
+}
+
+.result-spotlight-student strong {
+  color: var(--navy);
+  font-size: 22px;
+  line-height: 1.15;
+}
+
+.result-spotlight-student span {
+  color: #596981;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.result-spotlight-photo {
+  grid-area: photo;
+  position: relative;
+  z-index: 1;
+  align-self: stretch;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-spotlight-photo img {
+  display: block;
+  width: min(100%, 330px);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 24px;
+  border: 7px solid #fff;
+  box-shadow: 0 22px 46px rgba(7, 21, 47, .17);
+}
+
+.result-spotlight-detail {
+  grid-area: detail;
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.result-spotlight-detail p {
+  margin: 0;
+  color: #5a687e;
+  font-size: 13px;
+  line-height: 1.78;
+}
+
+.result-spotlight-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+  min-height: 46px;
+  padding: 12px 17px;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--red);
+  box-shadow: 0 12px 25px rgba(219, 36, 58, .18);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .015em;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.result-spotlight-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(219, 36, 58, .24);
+}
+
+/* Combined permanent success story */
+.achievement-layout-combined {
+  grid-template-columns: minmax(0, 1.02fr) minmax(350px, .98fr);
+  gap: 42px;
+}
+
+.achievement-layout-combined .achievement-copy {
+  align-self: center;
+}
+
+.achievement-media {
+  display: grid;
+  gap: 18px;
+  align-items: start;
+}
+
+.achievement-photo-rida img {
+  max-width: 455px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.achievement-photo-team {
+  display: block;
+  width: min(100%, 455px);
+  margin: 0 auto;
+}
+
+.achievement-photo-team img {
+  max-width: 455px;
+  aspect-ratio: 16 / 10;
+  border-radius: 20px;
+}
+
+.achievement-photo-team figcaption {
+  margin-top: 9px;
+  color: #738097;
+  font-size: 9px;
+  line-height: 1.45;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .result-spotlight-card {
+    grid-template-columns: minmax(0, 1fr) minmax(240px, .62fr);
+    column-gap: 30px;
+    padding: 38px;
+  }
+
+  .achievement-layout-combined {
+    grid-template-columns: 1fr;
+  }
+
+  .achievement-media {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr);
+    align-items: center;
+  }
+
+  .achievement-photo-rida img,
+  .achievement-photo-team,
+  .achievement-photo-team img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  .result-spotlight {
+    padding: 22px 0;
+  }
+
+  .result-spotlight .container {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .result-spotlight-card {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "copy"
+      "photo"
+      "detail";
+    gap: 22px;
+    min-height: 0;
+    padding: 28px 22px 24px;
+    border-radius: 22px;
+  }
+
+  .result-spotlight h2 {
+    font-size: clamp(42px, 13vw, 58px);
+  }
+
+  .result-spotlight-score {
+    font-size: 19px;
+  }
+
+  .result-spotlight-student {
+    margin-top: 20px;
+  }
+
+  .result-spotlight-student strong {
+    font-size: 21px;
+  }
+
+  .result-spotlight-photo {
+    justify-content: flex-start;
+  }
+
+  .result-spotlight-photo img {
+    width: min(100%, 310px);
+    border-radius: 20px;
+  }
+
+  .result-spotlight-detail p {
+    font-size: 12px;
+    line-height: 1.72;
+  }
+
+  .result-spotlight-cta {
+    width: 100%;
+    justify-content: space-between;
+    line-height: 1.45;
+  }
+
+  .achievement-media {
+    grid-template-columns: 1fr;
+  }
+
+  .achievement-photo-rida img {
+    width: min(100%, 390px);
+    max-width: 390px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .achievement-photo-team,
+  .achievement-photo-team img {
+    width: 100%;
+    max-width: 560px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .result-spotlight-cta {
+    transition: none;
+  }
+}
+
+
+/* =========================================================
+   RESULT / ACHIEVEMENT REFINEMENT
+   Remove repeated portrait from result banner and balance
+   portrait + Olympiad team image in permanent success story.
+   ========================================================= */
+
+.result-spotlight-card--text-only {
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
+  grid-template-areas: "copy detail";
+  min-height: 0;
+  align-items: center;
+  padding-top: 38px;
+  padding-bottom: 38px;
+}
+
+.result-spotlight-card--text-only .result-spotlight-copy {
+  grid-area: copy;
+}
+
+.result-spotlight-card--text-only .result-spotlight-detail {
+  grid-area: detail;
+  max-width: 100%;
+  padding-left: 34px;
+  border-left: 1px solid rgba(7, 21, 47, .10);
+}
+
+.result-spotlight-card--text-only .result-spotlight-student {
+  margin-top: 20px;
+}
+
+.achievement-media-balanced {
+  display: grid;
+  grid-template-columns: minmax(150px, .38fr) minmax(0, .62fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.achievement-media-balanced .achievement-photo-rida,
+.achievement-media-balanced .achievement-photo-team {
+  width: 100%;
+  margin: 0;
+}
+
+.achievement-media-balanced .achievement-photo-rida {
+  align-self: center;
+}
+
+.achievement-media-balanced .achievement-photo-rida img {
+  width: 100%;
+  max-width: 230px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 18px;
+  border: 6px solid #fff;
+  box-shadow: 0 16px 34px rgba(7, 21, 47, .13);
+}
+
+.achievement-media-balanced .achievement-photo-team {
+  align-self: center;
+}
+
+.achievement-media-balanced .achievement-photo-team img {
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 16px 34px rgba(7, 21, 47, .10);
+}
+
+.achievement-media-balanced .achievement-photo-team figcaption {
+  margin-top: 8px;
+  font-size: 8.5px;
+  line-height: 1.4;
+}
+
+@media (max-width: 920px) {
+  .result-spotlight-card--text-only {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "copy"
+      "detail";
+    gap: 24px;
+  }
+
+  .result-spotlight-card--text-only .result-spotlight-detail {
+    padding-left: 0;
+    padding-top: 22px;
+    border-left: 0;
+    border-top: 1px solid rgba(7, 21, 47, .10);
+  }
+
+  .achievement-media-balanced {
+    grid-template-columns: minmax(135px, .34fr) minmax(0, .66fr);
+  }
+
+  .achievement-media-balanced .achievement-photo-rida img {
+    max-width: 210px;
+  }
+}
+
+@media (max-width: 620px) {
+  .result-spotlight-card--text-only {
+    grid-template-areas:
+      "copy"
+      "detail";
+    padding: 28px 22px 24px;
+  }
+
+  .result-spotlight-card--text-only .result-spotlight-detail {
+    padding-top: 18px;
+  }
+
+  .achievement-media-balanced {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .achievement-media-balanced .achievement-photo-rida {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .achievement-media-balanced .achievement-photo-rida img {
+    width: min(58vw, 220px);
+    max-width: 220px;
+    aspect-ratio: 4 / 5;
+  }
+
+  .achievement-media-balanced .achievement-photo-team img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+
+/* Final visual balance refinement for combined Rida achievement media */
+.achievement-media-balanced {
+  grid-template-columns: minmax(165px, .36fr) minmax(0, .64fr);
+  gap: 14px;
+}
+
+.achievement-media-balanced .achievement-photo-rida img {
+  max-width: 248px;
+}
+
+.achievement-media-balanced .achievement-photo-team img {
+  transform: scale(1.08);
+  transform-origin: center;
+}
+
+@media (max-width: 920px) {
+  .achievement-media-balanced {
+    grid-template-columns: minmax(145px, .34fr) minmax(0, .66fr);
+    gap: 14px;
+  }
+
+  .achievement-media-balanced .achievement-photo-rida img {
+    max-width: 225px;
+  }
+
+  .achievement-media-balanced .achievement-photo-team img {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 620px) {
+  .achievement-media-balanced {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .achievement-media-balanced .achievement-photo-rida img {
+    width: min(62vw, 230px);
+    max-width: 230px;
+  }
+
+  .achievement-media-balanced .achievement-photo-team img {
+    transform: none;
+  }
+}
+
+
+/* Hero refinement — rotating STEP orbit removed */
+.step-orbit-emblem {
+  display: none !important;
+}
