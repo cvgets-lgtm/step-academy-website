@@ -2606,3 +2606,116 @@ button, input { font: inherit; }
   }
 }
 
+
+/* Teachers’ Day — Student Appreciation */
+.teachers-day {
+  position: relative;
+  overflow: hidden;
+  background: #f3eee6;
+}
+.teachers-day:before {
+  content: "";
+  position: absolute;
+  width: 420px; height: 420px;
+  right: -150px; top: -180px;
+  border-radius: 50%;
+  background: rgba(184, 139, 78, .08);
+}
+.teachers-day-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: .92fr 1.08fr;
+  gap: 76px;
+  align-items: center;
+}
+.teachers-day-photo {
+  margin: 0;
+  padding: 12px;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 28px 70px rgba(61, 43, 28, .14);
+}
+.teachers-day-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.06 / 1;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.teachers-day-photo figcaption {
+  padding: 12px 8px 3px;
+  color: #7b6b5d;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-align: center;
+}
+.teachers-day-copy { max-width: 600px; }
+.teachers-day-copy h2 {
+  margin: 0 0 22px;
+  color: var(--navy);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 4.7vw, 62px);
+  line-height: 1.02;
+  letter-spacing: -.04em;
+}
+.teachers-day-copy h2 em { color: #9a7040; font-style: normal; }
+.teachers-day-copy p {
+  margin: 0 0 17px;
+  color: #657187;
+  font-size: 13px;
+  line-height: 1.85;
+}
+.teachers-day-copy .teachers-day-lead {
+  color: var(--navy);
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+.teachers-day-note {
+  margin-top: 25px;
+  padding: 15px 18px;
+  border-left: 3px solid #b88b4e;
+  color: var(--navy);
+  background: rgba(255,255,255,.62);
+  font-size: 11px;
+  font-weight: 800;
+}
+@media (max-width: 900px) {
+  .teachers-day-layout { grid-template-columns: 1fr; gap: 38px; }
+  .teachers-day-photo { width: min(620px, 100%); margin: 0 auto; }
+  .teachers-day-copy { max-width: 720px; }
+}
+@media (max-width: 560px) {
+  .teachers-day-layout { gap: 30px; }
+  .teachers-day-photo { padding: 8px; border-radius: 18px; }
+  .teachers-day-photo img { border-radius: 12px; }
+  .teachers-day-copy h2 { font-size: clamp(36px, 11vw, 46px); }
+  .teachers-day-copy p { font-size: 12px; line-height: 1.75; }
+}
+
+/* Compact one-row Young Achievers layout — Oct 2026 */
+@media (min-width: 901px) {
+  .halfbook-results {
+    padding: 58px 0 64px;
+  }
+
+  .halfbook-results-head {
+    margin-bottom: 26px;
+  }
+
+  .halfbook-results-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .halfbook-result-card--first {
+    grid-column: auto;
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .halfbook-result-card img {
+    aspect-ratio: 4 / 3;
+  }
+}
