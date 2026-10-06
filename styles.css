@@ -2684,7 +2684,7 @@ button, input { font: inherit; }
 @media (max-width: 900px) {
   .teachers-day-layout { grid-template-columns: 1fr; gap: 38px; }
   .teachers-day-photo { width: min(620px, 100%); margin: 0 auto; }
-  .teachers-day-copy { max-width: 720px; }
+  .teachers-day-copy { order: -1; max-width: 720px; }
 }
 @media (max-width: 560px) {
   .teachers-day-layout { gap: 30px; }
